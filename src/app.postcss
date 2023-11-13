@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+html,
+body {
+	@apply h-full overflow-hidden;
+}
+
+:root [data-theme='sahara'] {
+    --theme-font-family-base: 'montserrat', sans-serif;
+    --theme-font-family-heading: 'montserrat', sans-serif;
+}
+
+@font-face {
+	/* Reference name */
+	font-family: 'montserrat';
+	src: url('/fonts/montserrat.ttf');
+}
