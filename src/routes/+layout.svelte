@@ -6,18 +6,22 @@
   import { computePosition, autoUpdate, flip, shift, offset, arrow } from '@floating-ui/dom';
   import { storePopup } from '@skeletonlabs/skeleton';
   storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
+
+  import { Modal, initializeStores } from '@skeletonlabs/skeleton';
+  initializeStores();
 </script>
 
+<Modal />
 <!-- App Shell -->
 <AppShell>
   <svelte:fragment slot="header">
     <!-- App Bar -->
-    <AppBar regionRowHeadline="text-error-600">
+    <AppBar regionRowHeadline="text-error-600" spacing='space-y-1'>
       <svelte:fragment slot="lead">
         <strong class="text-2xl">nathaniel goodby</strong>
       </svelte:fragment>
       <svelte:fragment slot='headline'>
-       geospatial data science | app development
+        geospatial software engineer
         </svelte:fragment>
       <svelte:fragment slot="trail">
         <a
@@ -39,6 +43,5 @@
       </svelte:fragment>
     </AppBar>
   </svelte:fragment>
-  <!-- Page Route Content -->
   <slot />
 </AppShell>

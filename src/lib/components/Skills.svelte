@@ -2,8 +2,10 @@
   export let skills: string[]
 </script>
 
-<div>
+
+<span class="inline-flex items-center space-x-2">
+  <span class="text-sm font-bold">SKILLS:</span>
   {#each skills as skill}
-    <span class="chip variant-filled mx-1 variant-filled-tertiary">{skill}</span>
+    <span class="chip text-black font-bold variant-filled mx-1 variant-ghost-error">{skill}</span>
   {/each}
-</div>
+</span>

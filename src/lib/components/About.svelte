@@ -4,14 +4,11 @@
 
 <div class="grid grid-cols-3 gap-4">
   <div class="col-span-1"></div> <!-- Empty column to the left -->
-  <div class="col-span-1">
-    <p class="my-12">
-      I'm a developer and ecologist with experience building web apps, visualizations, and analysis to help draw meaningful insight from complex environmental data.
-      <br /><br />
-      nat.goodby[at]gmail.com
-    </p>
+  <div class="col-span-1 mt-8">
+    <div class="variant-filled-primary col-span-1 p-4 rounded-md">I'm a software engineer based in Seattle, WA. Most of my work is focused on improving the availability and usability of geospatial data and building mapping applications.<br><br>This website gives a little info about me and some projects I've worked on. Please be in touch for more detail or to discuss how I can be of assistance.</div>
   </div>
-  <div class="col-span-1 m-12">
+  <div class="col-span-1 m-8 shadow">
     <img class="rounded-lg border border-primary w-full" alt="Nat Goodby" src="/me.jpg" />
   </div>
 </div>
+
