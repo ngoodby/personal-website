@@ -7,13 +7,13 @@ import Resume from '$lib/components/Resume.svelte';
 import type { ModalSettings } from '@skeletonlabs/skeleton';
 
 import { getModalStore } from '@skeletonlabs/skeleton';
-			
+
 const modalStore = getModalStore();
 
 const modal: ModalSettings = {
-	type: 'alert',
-	title: 'Hi there! 👋',
-	body: "My name is Nat. I'm a software engineer focused on improving the usability of geospatial data and building mapping applications. This website gives a little info about me and some projects I've worked on. Please be in touch for more detail or to discuss how I can be of assistance.<br><br>FUN FACT: I custom built this website using SvelteKit and Skeleton UI",
+  type: 'alert',
+  title: 'Hi there! 👋',
+  body: "My name is Nat. I'm a software engineer focused on improving the usability of geospatial data and building mapping applications. This website gives a little info about me and some projects I've worked on. Please be in touch for more detail or to discuss how I can be of assistance.<br><br>FUN FACT: I custom built this website using SvelteKit and Skeleton UI",
   buttonTextCancel: 'Close'
 };
 modalStore.trigger(modal);
