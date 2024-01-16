@@ -35,7 +35,7 @@ let tabSet: number=0;
         </div>
         {:else if tabSet === 1}
 
-        <div style="background-image: url('/topo.png')"> 
+        <div class="border-t border-secondary-700 h-screen" style="background-image: url('/topo.png')"> 
           <About />
         </div>
         {:else if tabSet === 2}

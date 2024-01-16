@@ -1,4 +1,3 @@
-import adapter from '@sveltejs/adapter-auto';
 import { vitePreprocess } from '@sveltejs/kit/vite';
 import vercel from '@sveltejs/adapter-vercel'
 
@@ -9,7 +8,7 @@ const config = {
   // for more information about preprocessors
   preprocess: [ vitePreprocess()],
 
-  adapter: adapter(),
+  adapter: vercel(),
   target: '#svelte',
 
   vitePlugin: {
