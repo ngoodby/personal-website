@@ -51,7 +51,7 @@
 	<a
 		href="https://github.com/ngoodby/personal-website"
 		target="_blank"
-		class="absolute bottom-4 font-bold right-4 text-white px-4 py-2 rounded-md max-w-xs h-auto"
+		class="hidden sm:inline absolute bottom-4 font-bold right-4 text-white px-4 py-2 rounded-md max-w-xs h-auto"
 	>
 		<svg height="40" viewBox="0 0 1792 1792" width="40" xmlns="http://www.w3.org/2000/svg"
 			><path
