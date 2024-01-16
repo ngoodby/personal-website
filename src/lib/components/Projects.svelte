@@ -45,12 +45,12 @@
 
 <div class="flex justify-center">
   <div class="flex flex-col items-center pt-4">
-    <div class="card variant-filled-primary w-1/2 mb-4 p-4">
-      <Stepper stepTerm='Project' buttonCompleteLabel='' badge='variant-filled-tertiary' buttonBackLabel='Previous'>
+    <div class="card variant-filled-primary w-3/4 mb-4 p-4 shadow-md">
+      <Stepper stepTerm='Project' buttonCompleteLabel='' badge='variant-filled-tertiary' buttonBackLabel='Previous' class='h-full'>
         {#each projects as p}
           <Step class='h-full'>
             <svelte:fragment slot="header">{p.name.toUpperCase()}</svelte:fragment>
-            {p.description}<br><a href={p.url} target='_blank'><img class='w-full h-80 object-cover mx-auto' src={p.image}/></a><br><Skills skills={p.skills}/>
+            {p.description}<br><br><a href={p.url} target='_blank'><img class='w-full h-80 object-cover mx-auto rounded-md' src={p.image}/></a><br><Skills skills={p.skills}/>
           </Step>
         {/each}
       </Stepper> 
