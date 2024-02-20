@@ -3,6 +3,45 @@
 	import { Stepper, Step } from '@skeletonlabs/skeleton';
 
 	const projects = [
+    {
+      url: '',
+      name: 'WDFW Land Information System',
+      description: 'Built a website for viewing and editing real estate and facility data for WDFW',
+      skills: [
+        'Typescript',
+        'arcpy',
+        'ESRI JS Maps SDK',
+        'SQL',
+        'SvelteKit',
+        'Azure DevOps'
+      ],
+      image: '/LIS_animation.gif'
+    
+    },
+		{
+			url: 'https://batcon.shinyapps.io/species_of_greatest_conservation_need/',
+			name: 'Bat Species of Greatest Conservation Need',
+			description:
+				'Tool to identify bat species of greatest conservation need across US states. Used by state fish and wildlife departments to coordinate collaborative efforts for landscape scale conservation.',
+			skills: ['R', 'R Shiny', 'Python', 'PostGIS', 'AWS'],
+			image: '/sgcn_animation.gif'
+		},
+		{
+			url: 'https://batcon.shinyapps.io/pacwest_hub_regional_shiny_app/',
+			name: 'PacWest bat hub regional data viewer',
+			description:
+				'Visualize regional data trends for acoustic bat surveys conducted throughout California and Nevada. Tool features an automated report generator that creates aesthetic and digestible reports on request.',
+			skills: ['R', 'R Shiny', 'PostGIS', 'AWS'],
+			image: '/data_viewer_animation.gif'
+		},
+		{
+			url: 'https://github.com/ngoodby/ndpl_reporting',
+			name: 'Automated reporting for the National Data Processing Lab',
+			description:
+				'Automated data processing and reporting pipeline digesting hundreds of thousands of features and producing customized reports, saving hundreds of hours annually of manual labor and improving ',
+			skills: ['markdown', 'PostGIS', 'AWS', 'Python'],
+			image: '/reporting_animation.gif'
+		},
 		{
 			url: 'https://wdfw.wa.gov/places-to-go/wildlife-areas',
 			name: 'WDFW Database Management',
@@ -20,38 +59,14 @@
 			],
 			image: '/dfw-website.jpg'
 		},
-		{
-			url: 'https://batcon.shinyapps.io/species_of_greatest_conservation_need/',
-			name: 'Bat Species of Greatest Conservation Need',
-			description:
-				'Tool to identify bat species of greatest conservation need across US states. Used by state fish and wildlife departments to coordinate collaborative efforts for landscape scale conservation.',
-			skills: ['R', 'R Shiny', 'Python', 'PostGIS', 'AWS'],
-			image: '/sgcn.png'
-		},
-		{
-			url: 'https://batcon.shinyapps.io/pacwest_hub_regional_shiny_app/',
-			name: 'PacWest bat hub regional data viewer',
-			description:
-				'Visualize regional data trends for acoustic bat surveys conducted throughout California and Nevada. Tool features an automated report generator that creates aesthetic and digestible reports on request.',
-			skills: ['R', 'R Shiny', 'PostGIS', 'AWS'],
-			image: '/data-viewer.png'
-		},
-		{
-			url: 'https://github.com/ngoodby/ndpl_reporting',
-			name: 'Automated reporting for the National Data Processing Lab',
-			description:
-				'Automated data processing and reporting pipeline digesting hundreds of thousands of features and producing customized reports, saving hundreds of hours annually of manual labor and improving ',
-			skills: ['markdown', 'PostGIS', 'AWS', 'Python'],
-			image: '/report.png'
-		},
-		{
-			url: 'https://github.com/ngoodby/regression_project',
-			name: 'Classifying Habitat Types Using Image Recognition',
-			description:
-				'Developed a linear regression model to predict the popularity of hiking trails in Washington State. Coefficients from the regression were used to better understand what characteristics of a trail tend to determine whether the trail is popular or not. The model was then used on unseen data to identify undiscovered trails by identifying trails whose actual popularity is well below predicted popularity. Data for the project was scraped using BeautifulSoup and Selenium.',
-			skills: ['Tensorflow', 'Pandas', 'Numpy', 'SciKit-Learn', 'Selenium', 'BeautifulSoup'],
-			image: '/features.png'
-		}
+		// {
+		// 	url: 'https://github.com/ngoodby/regression_project',
+		// 	name: 'Classifying Habitat Types Using Image Recognition',
+		// 	description:
+		// 		'Developed a linear regression model to predict the popularity of hiking trails in Washington State. Coefficients from the regression were used to better understand what characteristics of a trail tend to determine whether the trail is popular or not. The model was then used on unseen data to identify undiscovered trails by identifying trails whose actual popularity is well below predicted popularity. Data for the project was scraped using BeautifulSoup and Selenium.',
+		// 	skills: ['Tensorflow', 'Pandas', 'Numpy', 'SciKit-Learn', 'Selenium', 'BeautifulSoup'],
+		// 	image: '/features.png'
+		// }
 	];
 </script>
 
@@ -69,7 +84,7 @@
 					<Step class="h-full">
 						<svelte:fragment slot="header">{p.name.toUpperCase()}</svelte:fragment>
 						{p.description}<br /><br /><a href={p.url} target="_blank"
-							><img class="w-full h-80 object-cover mx-auto rounded-md" src={p.image} /></a
+							><img class="w-2/3 h-1/2 object-cover mx-auto rounded-md" src={p.image} /></a
 						><br /><Skills skills={p.skills} />
 					</Step>
 				{/each}
