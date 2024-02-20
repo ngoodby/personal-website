@@ -6,7 +6,7 @@
     {
       url: '',
       name: 'WDFW Land Information System',
-      description: 'Built a website for viewing and editing real estate and facility data for WDFW',
+      description: 'Developed a website for viewing and editing real estate and facility data for the Washington Department of Fish and Wildlife',
       skills: [
         'Typescript',
         'arcpy',
@@ -80,13 +80,15 @@
         buttonBackLabel="Previous"
         class="h-full"
         on:step={onStep}
-        >
+      >
         {#each projects as p}
           <Step class="h-full">
             <svelte:fragment slot="header">{p.name.toUpperCase()}</svelte:fragment>
             {p.description}<br /><br /><a href={p.url} target="_blank"
-              ><img class="w-2/3 h-1/2 object-cover mx-auto rounded-md" src={p.image} /></a
-          ><br /><Skills skills={p.skills} />
+            >
+              <img class="w-2/3 h-1/2 object-cover mx-auto rounded-md" src={p.image} />
+            </a
+            ><br /><Skills skills={p.skills} />
           </Step>
         {/each}
       </Stepper>
