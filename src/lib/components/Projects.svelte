@@ -1,6 +1,8 @@
-<script>
+<script lang='ts'>
   import Skills from './Skills.svelte';
-  import { Stepper, Step } from '@skeletonlabs/skeleton';
+  import { Stepper, Step, ProgressRadial } from '@skeletonlabs/skeleton';
+  let imageLoaded: boolean[]=[];
+  let image;
 
   const projects = [
     {
@@ -53,13 +55,20 @@
         'ESRI JS Maps SDK',
         'SQL',
         'Python',
-        'SvelteKit',
-        'Skeleton UI',
         'Azure DevOps'
       ],
       image: '/dfw-website.jpg'
     },
   ];
+
+  imageLoaded = projects.map(() => false);
+  imageLoaded[0]=true
+
+  function handleImageLoad(_: Event, index: number) {
+    imageLoaded=projects.map(()=> false)
+    imageLoaded[index] = true;
+    imageLoaded = [...imageLoaded]; // Force update
+  }
 
   function onStep () {
     const elemPage = document.querySelector('#page');
@@ -81,12 +90,23 @@
         class="h-full"
         on:step={onStep}
       >
-        {#each projects as p}
+        {#each projects as p, i}
           <Step class="h-full">
             <svelte:fragment slot="header">{p.name.toUpperCase()}</svelte:fragment>
-            {p.description}<br /><br /><a href={p.url} target="_blank"
-            >
-              <img class="w-2/3 h-1/2 object-cover mx-auto rounded-md" src={p.image} />
+            {p.description}<br /><br /><a href={p.url} target="_blank" >
+              {#if !imageLoaded[i]}
+                <div class="flex items-center justify-center w-2/3 h-1/2 mx-auto rounded-md" >
+                  <ProgressRadial value={undefined} stroke={100} meter="stroke-error-500" track="stroke-error-500/30" strokeLinecap="butt"/>
+                </div>
+              {/if}
+              <img 
+                bind:this={image}
+                on:load={(event) => handleImageLoad(event, i)}
+                class="w-2/3 h-1/2 object-cover mx-auto rounded-md" 
+                src={p.image} 
+                alt={p.name}
+              />
+
             </a
             ><br /><Skills skills={p.skills} />
           </Step>
@@ -95,3 +115,4 @@
     </div>
   </div>
 </div>
+
